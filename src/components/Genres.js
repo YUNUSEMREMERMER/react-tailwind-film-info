@@ -14,6 +14,9 @@ function Genres({
     const darkTheme = createTheme({
         palette: {
             mode: 'dark',
+            primary: {
+                main: "#fff",
+              },
         },
     });
 
