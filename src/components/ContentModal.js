@@ -20,7 +20,6 @@ const style = {
     border: "1px solid #282c34",
     borderRadius: "10px",
     color: "white",
-
   },
 };
 
@@ -67,10 +66,10 @@ export default function BasicModal({ children, media_type, id }) {
         aria-describedby="modal-modal-description"
         sx={style.modal}
       >
-        <Box sx={style.paper}>
+        <Box sx={style.paper} className="pt-2 pb-6 px-2">
           {
 
-            content && (<div className='flex flex-col justify-between w-full h-full py-[10px] md:justify-around md:flex-row'>
+            content && (<div className='flex flex-col justify-between w-full h-full overflow-y-scroll md:justify-around md:flex-row'>
               <img
                 src={
                   content.poster_path
@@ -91,8 +90,8 @@ export default function BasicModal({ children, media_type, id }) {
                 className=" flex  rounded-lg object-contain md:hidden"
               />
 
-              <div className='w-[95%] p-2 h-[90%] flex flex-col md:w-[58%] md:p-0 md:h-full '>
-                <span className="text-[30px] h-[12%] flex items-center justify-center font-bold whitespace-nowrap">
+              <div className='w-[95%] p-[10px] h-[90%] flex flex-col font-light md:w-[58%] md:p-0 md:h-full '>
+                <span className="text-[5vw] md:text-[3.5vw] h-[12%] flex items-center justify-center whitespace-nowrap">
                   {content.name || content.title} (
                   {(
                     content.first_air_date ||
@@ -105,7 +104,7 @@ export default function BasicModal({ children, media_type, id }) {
                   <i className="pb-[10px] self-center italic">{content.tagline}</i>
                 )}
 
-                <span className="text-xl flex h-[30%] overflow-y-auto p-4 rounded-[20px] text-justify shadow-lg shadow-black">
+                <span className="h-[40%] flex h-[30%] overflow-y-scroll p-[15px] rounded-[20px] text-justify shadow-lg shadow-black">
                   {content.overview}
                 </span>
 
